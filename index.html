@@ -517,7 +517,7 @@ async function sendMsg() {
   const typing = addBubble('ai', '<em style="color:#aaa">Analyzing your pronunciation...</em>');
   const system = `You are cuteenglishteacher.ai, a warm and encouraging English pronunciation coach. Student level: ${coachLevel}. Today's focus: ${coachFocus}. When the student types a sentence: 1) Acknowledge warmly (1 sentence). 2) Identify 1-3 pronunciation challenges using [brackets] for phonemes like [th] [r] [sh]. 3) Give a practical tip per challenge describing mouth/tongue position simply. 4) Show stressed syllables in CAPS. 5) End with: "Pronunciation score: X/10". 6) Give one short encouragement and suggest the next sentence to try. Keep under 200 words. Be warm and specific.`;
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 1000, system, messages: coachHistory.slice(-10) })
