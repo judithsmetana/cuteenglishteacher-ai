@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>cuteenglishteacher.ai — English Pronunciation Coaching</title>
+<meta name="description" content="AI-powered English pronunciation coaching. Speak into your phone, get instant expert feedback. Pay per session from $5.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  :root {
+    --teal: #1D9E75;
+    --teal-dark: #0F6E56;
+    --teal-deeper: #085041;
+    --teal-light: #E1F5EE;
+    --teal-mid: #5DCAA5;
+    --gold: #BA7517;
+    --gold-light: #FEF3DC;
+    --white: #FFFFFF;
+    --off-white: #F7FAF9;
+    --dark: #1A1A1A;
+    --gray: #5F5E5A;
+    --gray-light: #E8E8E8;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: var(--white); color: var(--dark); line-height: 1.6; }
+
+  /* NAV */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--gray-light); padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo { width: 36px; height: 36px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .nav-title { font-size: 17px; font-weight: 700; color: var(--teal-dark); }
+  .nav-links { display: flex; align-items: center; gap: 20px; }
+  .nav-link { font-size: 14px; color: var(--gray); text-decoration: none; }
+  .nav-link:hover { color: var(--teal); }
+  .nav-cta { background: var(--teal); color: var(--white); padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; }
+  .nav-cta:hover { background: var(--teal-dark); }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, var(--teal-deeper) 0%, var(--teal-dark) 50%, #1a7a5e 100%); padding: 80px 24px 100px; text-align: center; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .hero::after { content: ''; position: absolute; bottom: -80px; left: -60px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.03); }
+  .hero-eyebrow { display: inline-block; background: rgba(255,255,255,0.12); color: var(--teal-mid); font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border-radius: 99px; margin-bottom: 24px; }
+  .hero h1 { font-size: clamp(32px, 6vw, 58px); font-weight: 800; color: var(--white); line-height: 1.15; margin-bottom: 20px; max-width: 760px; margin-left: auto; margin-right: auto; }
+  .hero h1 span { color: var(--teal-mid); }
+  .hero-sub { font-size: clamp(16px, 2.5vw, 20px); color: rgba(255,255,255,0.8); max-width: 540px; margin: 0 auto 36px; }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+  .btn-primary { background: var(--white); color: var(--teal-deeper); padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { background: var(--teal-light); }
+  .btn-secondary { background: transparent; color: var(--white); padding: 14px 32px; border-radius: 10px; font-size: 16px; font-weight: 600; text-decoration: none; border: 2px solid rgba(255,255,255,0.3); }
+  .btn-secondary:hover { border-color: var(--white); }
+  .hero-prices { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .price-pill { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: var(--white); padding: 8px 18px; border-radius: 99px; font-size: 14px; }
+  .price-pill strong { color: var(--teal-mid); }
+
+  /* SOCIAL PROOF */
+  .proof { background: var(--off-white); padding: 28px 24px; text-align: center; border-bottom: 1px solid var(--gray-light); }
+  .proof-inner { max-width: 800px; margin: 0 auto; display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; align-items: center; }
+  .proof-stat { text-align: center; }
+  .proof-num { font-size: 28px; font-weight: 800; color: var(--teal-dark); }
+  .proof-label { font-size: 13px; color: var(--gray); }
+  .proof-div { width: 1px; height: 40px; background: var(--gray-light); }
+
+  /* HOW IT WORKS */
+  .section { padding: 72px 24px; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--teal); margin-bottom: 12px; }
+  .section-title { font-size: clamp(26px, 4vw, 40px); font-weight: 800; color: var(--dark); margin-bottom: 16px; line-height: 1.2; }
+  .section-sub { font-size: 17px; color: var(--gray); max-width: 560px; margin-bottom: 48px; }
+
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+  .step { background: var(--white); border: 1px solid var(--gray-light); border-radius: 14px; padding: 28px 24px; position: relative; }
+  .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--teal); color: var(--white); font-size: 18px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+  .step h3 { font-size: 17px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+  .step p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+
+  /* WHO IT'S FOR */
+  .audience { background: var(--off-white); padding: 72px 24px; }
+  .audience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+  .audience-card { background: var(--white); border-radius: 14px; padding: 24px; border-left: 4px solid var(--teal); }
+  .audience-icon { font-size: 32px; margin-bottom: 12px; }
+  .audience-card h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+  .audience-card p { font-size: 14px; color: var(--gray); }
+
+  /* PRICING */
+  .pricing { padding: 72px 24px; }
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; max-width: 760px; margin: 0 auto 20px; }
+  .pkg { border: 2px solid var(--gray-light); border-radius: 16px; padding: 28px 24px; text-align: center; }
+  .pkg.featured { border-color: var(--teal); background: var(--teal-light); }
+  .pkg-badge { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--teal-dark); background: var(--white); padding: 4px 12px; border-radius: 99px; display: inline-block; margin-bottom: 12px; }
+  .pkg-name { font-size: 15px; font-weight: 600; color: var(--gray); margin-bottom: 8px; }
+  .pkg-price { font-size: 42px; font-weight: 800; color: var(--teal-dark); line-height: 1; }
+  .pkg-mins { font-size: 14px; color: var(--gray); margin: 6px 0 16px; }
+  .pkg-rate { font-size: 13px; color: var(--teal); font-weight: 600; }
+  .pricing-note { text-align: center; font-size: 14px; color: var(--gray); max-width: 500px; margin: 0 auto; }
+
+  /* COACH PREVIEW */
+  .preview { background: var(--teal-deeper); padding: 72px 24px; }
+  .preview-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+  .preview h2 { font-size: clamp(24px, 4vw, 38px); font-weight: 800; color: var(--white); margin-bottom: 16px; }
+  .preview-sub { font-size: 17px; color: rgba(255,255,255,0.75); margin-bottom: 40px; }
+  .chat-demo { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 16px; padding: 24px; text-align: left; }
+  .demo-msg { display: flex; gap: 10px; margin-bottom: 16px; align-items: flex-start; }
+  .demo-msg.user { flex-direction: row-reverse; }
+  .demo-av { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; flex-shrink: 0; }
+  .demo-av.ai { background: var(--teal); color: var(--white); }
+  .demo-av.student { background: rgba(255,255,255,0.15); color: var(--white); }
+  .demo-bubble { max-width: 80%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.6; }
+  .demo-bubble.ai { background: rgba(255,255,255,0.1); color: var(--white); border-radius: 4px 12px 12px 12px; }
+  .demo-bubble.student { background: var(--teal); color: var(--white); border-radius: 12px 4px 12px 12px; }
+  .phoneme-tag { display: inline-block; background: var(--teal-light); color: var(--teal-deeper); border-radius: 4px; padding: 1px 6px; font-family: monospace; font-size: 12px; margin: 0 2px; }
+  .score-tag { display: inline-flex; align-items: center; gap: 4px; background: rgba(255,255,255,0.15); color: var(--white); border-radius: 99px; padding: 3px 10px; font-size: 12px; font-weight: 600; margin-top: 6px; }
+
+  /* CTA */
+  .cta-section { background: var(--teal-light); padding: 80px 24px; text-align: center; }
+  .cta-section h2 { font-size: clamp(26px, 4vw, 42px); font-weight: 800; color: var(--teal-deeper); margin-bottom: 16px; }
+  .cta-section p { font-size: 18px; color: var(--teal-dark); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+  .cta-btn { background: var(--teal-deeper); color: var(--white); padding: 16px 40px; border-radius: 12px; font-size: 18px; font-weight: 700; text-decoration: none; display: inline-block; }
+  .cta-btn:hover { background: var(--teal-dark); }
+
+  /* FOOTER */
+  footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 36px 24px; text-align: center; font-size: 13px; }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 16px; }
+  .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; }
+  .footer-links a:hover { color: var(--white); }
+  .footer-brand { color: var(--teal-mid); font-weight: 600; margin-bottom: 8px; font-size: 15px; }
+
+  @media (max-width: 600px) {
+    .proof-div { display: none; }
+    .nav-links { display: none; }
+  }
+</style>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PNE41RK4K6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PNE41RK4K6');
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo">🎓</div>
+    <span class="nav-title">cuteenglishteacher.ai</span>
+  </a>
+  <div class="nav-links">
+    <a href="#how-it-works" class="nav-link">How it works</a>
+    <a href="#pricing" class="nav-link">Pricing</a>
+    <a href="#book" class="nav-link">Book</a>
+    <a href="#subscribe" class="nav-link">Subscribe</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="/app.html" class="nav-cta">Start coaching →</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">🎤 AI-Powered · Voice-First · Expert-Designed</div>
+  <h1>Speak clearly.<br><span>Sound confident.</span><br>Pay $5.</h1>
+  <p class="hero-sub">Real-time pronunciation coaching for non-native English speakers. Tap the mic, speak, get instant expert feedback.</p>
+  <div class="hero-btns">
+    <a href="/app.html" class="btn-primary">🎤 Start your first session</a>
+    <a href="#how-it-works" class="btn-secondary">See how it works</a>
+  </div>
+  <div class="hero-prices">
+    <div class="price-pill"><strong>$5</strong> · 10 minutes</div>
+    <div class="price-pill"><strong>$9</strong> · 20 minutes</div>
+    <div class="price-pill"><strong>$12</strong> · 30 minutes</div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  <div class="proof-inner">
+    <div class="proof-stat"><div class="proof-num">20+</div><div class="proof-label">Years teaching experience</div></div>
+    <div class="proof-div"></div>
+    <div class="proof-stat"><div class="proof-num">$5</div><div class="proof-label">Starting price per session</div></div>
+    <div class="proof-div"></div>
+    <div class="proof-stat"><div class="proof-num">AI</div><div class="proof-label">Powered by Claude</div></div>
+    <div class="proof-div"></div>
+    <div class="proof-stat"><div class="proof-num">24/7</div><div class="proof-label">Available anytime</div></div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section" id="how-it-works">
+  <div class="section-inner">
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-title">Five steps to clearer English</h2>
+    <p class="section-sub">No app to download. No subscription. Just open your browser and start speaking.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Choose your session</h3>
+        <p>Pick 10, 20, or 30 minutes based on what you need. Starting at just $5.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Pay securely</h3>
+        <p>Quick checkout via Stripe. Card, Apple Pay, and more accepted.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Timer unlocks</h3>
+        <p>Your session starts the moment payment confirms. No waiting.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Tap the mic</h3>
+        <p>Speak any sentence into your phone. The AI listens in real time.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h3>Get coached</h3>
+        <p>Instant phoneme-level feedback, stress patterns, and a pronunciation score.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="audience" id="who">
+  <div class="section-inner">
+    <div class="section-eyebrow">Who it's for</div>
+    <h2 class="section-title" style="margin-bottom:40px">Built for real students</h2>
+    <div class="audience-grid">
+      <div class="audience-card">
+        <div class="audience-icon">🪖</div>
+        <h3>Military candidates</h3>
+        <p>Preparing for ASVAB oral boards or military service communication requirements.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🌍</div>
+        <h3>ESL learners</h3>
+        <p>Non-native speakers who want to sound clear and confident in everyday conversation.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">💼</div>
+        <h3>Workforce entrants</h3>
+        <p>Job seekers and professionals who need clearer English for interviews and the workplace.</p>
+      </div>
+      <div class="audience-card">
+        <div class="audience-icon">🎓</div>
+        <h3>Students</h3>
+        <p>High school and college students improving academic English pronunciation and presentation skills.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-inner" style="text-align:center">
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-title">No subscription. Ever.</h2>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;text-align:center">Pay only for the time you use. The longer the session, the lower the per-minute rate.</p>
+    <div class="pricing-grid">
+      <div class="pkg">
+        <div class="pkg-name">Starter</div>
+        <div class="pkg-price">$5</div>
+        <div class="pkg-mins">10 minutes</div>
+        <div class="pkg-rate">$0.50 / min</div>
+      </div>
+      <div class="pkg featured">
+        <div class="pkg-badge">Most popular</div>
+        <div class="pkg-name">Standard</div>
+        <div class="pkg-price">$9</div>
+        <div class="pkg-mins">20 minutes</div>
+        <div class="pkg-rate">$0.45 / min</div>
+      </div>
+      <div class="pkg">
+        <div class="pkg-name">Extended</div>
+        <div class="pkg-price">$12</div>
+        <div class="pkg-mins">30 minutes</div>
+        <div class="pkg-rate">$0.40 / min</div>
+      </div>
+    </div>
+    <p class="pricing-note">Sessions available Monday–Friday, 6:00 PM – 10:00 PM ET. Create a free account to track your session history and progress.</p>
+  </div>
+</section>
+
+<!-- COACH PREVIEW -->
+<section class="preview">
+  <div class="preview-inner">
+    <h2>See the coach in action</h2>
+    <p class="preview-sub">Real feedback. Real improvement. Every session.</p>
+    <div class="chat-demo">
+      <div class="demo-msg">
+        <div class="demo-av ai">CE</div>
+        <div class="demo-bubble ai">Welcome! Let's work on TH sounds today. Try saying: <strong>"The weather is beautiful."</strong></div>
+      </div>
+      <div class="demo-msg user">
+        <div class="demo-av student">S</div>
+        <div class="demo-bubble student">De wedder is bootiful.</div>
+      </div>
+      <div class="demo-msg">
+        <div class="demo-av ai">CE</div>
+        <div class="demo-bubble ai">
+          Good effort! Two sounds to focus on:<br><br>
+          <span class="phoneme-tag">th</span> in "the" — put your tongue lightly between your teeth and breathe out. Not <span class="phoneme-tag">d</span>.<br><br>
+          <span class="phoneme-tag">ea</span> in "weather" — say "WEA-ther" not "wed-der".<br><br>
+          Try: <em>Thhhh-e WEA-ther is BEAU-ti-ful.</em><br><br>
+          <span class="score-tag">⭐ Pronunciation score: 6/10</span>
+        </div>
+      </div>
+      <div class="demo-msg user">
+        <div class="demo-av student">S</div>
+        <div class="demo-bubble student">The weather is beautiful.</div>
+      </div>
+      <div class="demo-msg">
+        <div class="demo-av ai">CE</div>
+        <div class="demo-bubble ai">
+          Much better! Your <span class="phoneme-tag">th</span> is clear now. 🎉<br><br>
+          <span class="score-tag">⭐ Pronunciation score: 9/10</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="book">
+  <h2>Ready to speak clearly?</h2>
+  <p>Your first session is just $5. No app. No subscription. Just better English.</p>
+  <a href="/app.html" class="cta-btn">🎤 Start coaching now →</a>
+</section>
+
+<!-- SUBSCRIPTION SECTION -->
+<section style="background:#085041;padding:72px 24px;" id="subscribe">
+  <div style="max-width:900px;margin:0 auto;text-align:center">
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#5DCAA5;margin-bottom:12px">Monthly Plans</div>
+    <h2 style="font-size:clamp(26px,4vw,42px);font-weight:800;color:#fff;margin-bottom:16px">Subscribe &amp; Save</h2>
+    <p style="font-size:17px;color:rgba(255,255,255,0.75);margin-bottom:48px;max-width:500px;margin-left:auto;margin-right:auto">Commit to your English journey. Monthly subscribers save money and get priority booking.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin-bottom:24px">
+
+      <!-- STARTER -->
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:32px 24px;text-align:center">
+        <div style="font-size:14px;font-weight:600;color:#5DCAA5;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Starter</div>
+        <div style="font-size:48px;font-weight:800;color:#fff;line-height:1">$20</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:20px">/month</div>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;margin-bottom:24px">
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ 4 AI coaching sessions/mo</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ Session history tracking</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ Email support</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:10px">— Live sessions with Judith</div>
+        </div>
+        <a href="https://buy.stripe.com/plink_1TmdIvEHNQoUOHU4iYdzbHml" style="display:block;background:#1D9E75;color:#fff;padding:14px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none">Subscribe — $20/mo</a>
+      </div>
+
+      <!-- STANDARD -->
+      <div style="background:rgba(255,255,255,0.1);border:2px solid #1D9E75;border-radius:16px;padding:32px 24px;text-align:center;position:relative">
+        <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#1D9E75;color:#fff;font-size:12px;font-weight:700;padding:4px 16px;border-radius:99px;letter-spacing:1px;white-space:nowrap">MOST POPULAR</div>
+        <div style="font-size:14px;font-weight:600;color:#5DCAA5;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Standard</div>
+        <div style="font-size:48px;font-weight:800;color:#fff;line-height:1">$40</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:20px">/month</div>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;margin-bottom:24px">
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ 10 AI coaching sessions/mo</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ Priority booking slots</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ Session history tracking</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.4);margin-bottom:10px">— Live sessions with Judith</div>
+        </div>
+        <a href="https://buy.stripe.com/plink_1TmdKBEHNQoUOHU4rHaIELit" style="display:block;background:#1D9E75;color:#fff;padding:14px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none">Subscribe — $40/mo</a>
+      </div>
+
+      <!-- PREMIUM -->
+      <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:16px;padding:32px 24px;text-align:center">
+        <div style="font-size:14px;font-weight:600;color:#5DCAA5;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px">Premium</div>
+        <div style="font-size:48px;font-weight:800;color:#fff;line-height:1">$99</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.6);margin-bottom:20px">/month</div>
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;margin-bottom:24px">
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ Unlimited AI coaching sessions</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ 2 live sessions with Judith/mo</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ Priority booking slots</div>
+          <div style="font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:10px">✅ Corporate ESL eligible</div>
+        </div>
+        <a href="https://buy.stripe.com/plink_1TmdL6EHNQoUOHU4uuxCJgLZ" style="display:block;background:#1D9E75;color:#fff;padding:14px;border-radius:10px;font-size:15px;font-weight:700;text-decoration:none">Subscribe — $99/mo</a>
+      </div>
+
+    </div>
+    <p style="font-size:13px;color:rgba(255,255,255,0.5)">Cancel anytime · Secure billing via Stripe · cuteenglishteacher LLC®</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section style="background:#f7faf9;padding:72px 24px;" id="contact">
+  <div style="max-width:600px;margin:0 auto">
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1D9E75;margin-bottom:12px">Get in touch</div>
+    <h2 style="font-size:clamp(26px,4vw,38px);font-weight:800;color:#1a1a1a;margin-bottom:12px">Contact cuteenglishteacher LLC®</h2>
+    <p style="font-size:17px;color:#5F5E5A;margin-bottom:36px">Corporate inquiries, TOEFL programs, visa holder coaching, or partnership opportunities — we'd love to hear from you.</p>
+    <div style="background:#fff;border:1px solid #e0e0e0;border-radius:16px;padding:32px">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div>
+            <label style="font-size:13px;font-weight:600;color:#085041;display:block;margin-bottom:6px">Full Name *</label>
+            <input id="contact-name" type="text" placeholder="Your name" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #e0e0e0;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#1D9E75'" onblur="this.style.borderColor='#e0e0e0'">
+          </div>
+          <div>
+            <label style="font-size:13px;font-weight:600;color:#085041;display:block;margin-bottom:6px">Email Address *</label>
+            <input id="contact-email" type="email" placeholder="your@email.com" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #e0e0e0;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#1D9E75'" onblur="this.style.borderColor='#e0e0e0'">
+          </div>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;color:#085041;display:block;margin-bottom:6px">Company / Organization</label>
+          <input id="contact-company" type="text" placeholder="Your company name (optional)" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #e0e0e0;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#1D9E75'" onblur="this.style.borderColor='#e0e0e0'">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:600;color:#085041;display:block;margin-bottom:6px">Message *</label>
+          <textarea id="contact-message" placeholder="Tell us how we can help..." rows="4" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #e0e0e0;font-size:14px;font-family:inherit;outline:none;resize:vertical;box-sizing:border-box" onfocus="this.style.borderColor='#1D9E75'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
+        </div>
+        <button onclick="submitContact()" id="contact-btn" style="background:#1D9E75;color:#fff;padding:14px 32px;border-radius:10px;border:none;font-size:16px;font-weight:600;cursor:pointer;width:100%">Send Message 🎓</button>
+        <div id="contact-result" style="display:none;padding:14px;border-radius:8px;font-size:14px;text-align:center"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+async function submitContact() {
+  const name = document.getElementById('contact-name').value.trim();
+  const email = document.getElementById('contact-email').value.trim();
+  const company = document.getElementById('contact-company').value.trim();
+  const message = document.getElementById('contact-message').value.trim();
+  const btn = document.getElementById('contact-btn');
+  const result = document.getElementById('contact-result');
+
+  if (!name || !email || !message) {
+    result.style.display = 'block';
+    result.style.background = '#FEE2E2';
+    result.style.color = '#991B1B';
+    result.textContent = 'Please fill in your name, email, and message.';
+    return;
+  }
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, company, message })
+    });
+    const data = await response.json();
+    if (data.success) {
+      result.style.display = 'block';
+      result.style.background = '#E1F5EE';
+      result.style.color = '#085041';
+      result.textContent = '✅ Message sent! We will get back to you within 24 hours.';
+      document.getElementById('contact-name').value = '';
+      document.getElementById('contact-email').value = '';
+      document.getElementById('contact-company').value = '';
+      document.getElementById('contact-message').value = '';
+    } else {
+      throw new Error('Failed');
+    }
+  } catch (err) {
+    result.style.display = 'block';
+    result.style.background = '#FEE2E2';
+    result.style.color = '#991B1B';
+    result.textContent = 'Something went wrong. Please email judithsmetana@gmail.com directly.';
+  }
+
+  btn.textContent = 'Send Message 🎓';
+  btn.disabled = false;
+}
+</script>
+
+<footer>
+  <div class="footer-brand">cuteenglishteacher.ai</div>
+  <div class="footer-links">
+    <a href="/app.html">Launch App</a>
+    <a href="#how-it-works">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="/terms.html">Terms & Conditions</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <a href="mailto:hello@cuteenglishteacher.ai">Contact</a>
+  </div>
+  <div>&copy; 2026 cuteenglishteacher LLC &nbsp;·&nbsp; Southport, NC &nbsp;·&nbsp; All rights reserved</div>
+</footer>
+
+</body>
+</html>
