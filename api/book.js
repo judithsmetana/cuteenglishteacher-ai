@@ -23,7 +23,7 @@ export default async function handler(req, res) {
       subject: 'Your session is booked! 🎓 cuteenglishteacher.ai',
       html: `
         <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;background:#f7faf9;padding:32px 24px;">
-          <div style="background:#1D9E75;border-radius:12px;padding:24px;text-align:center;margin-bottom:24px">
+          <div style="background:#188260;border-radius:12px;padding:24px;text-align:center;margin-bottom:24px">
             <div style="font-size:36px;margin-bottom:8px">🎓</div>
             <div style="color:#fff;font-size:22px;font-weight:800">cuteenglishteacher.ai</div>
             <div style="color:rgba(255,255,255,0.8);font-size:14px">English Pronunciation Coaching</div>
@@ -38,12 +38,12 @@ export default async function handler(req, res) {
             </div>
             <p style="color:#333;font-size:15px">To start your session, go to your coaching app and pay for your session when you arrive. The AI coach will be ready for you!</p>
             <div style="text-align:center;margin:24px 0">
-              <a href="https://cuteenglishteacher.ai/app.html" style="background:#1D9E75;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px">Go to My Session →</a>
+              <a href="https://cuteenglishteacher.ai/app.html" style="background:#188260;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px">Go to My Session →</a>
             </div>
           </div>
           <div style="text-align:center;font-size:12px;color:#888">
             cuteenglishteacher LLC · Boiling Spring Lakes, NC<br>
-            <a href="https://cuteenglishteacher.ai/terms.html" style="color:#1D9E75">Terms & Conditions</a>
+            <a href="https://cuteenglishteacher.ai/terms.html" style="color:#188260">Terms & Conditions</a>
           </div>
         </div>
       `
@@ -62,7 +62,7 @@ export default async function handler(req, res) {
             <div style="margin-bottom:8px"><strong>Date:</strong> ${date}, 2026</div>
             <div><strong>Time:</strong> ${time} ET</div>
           </div>
-          <p style="color:#333">Log into your <a href="https://dashboard.stripe.com" style="color:#1D9E75">Stripe dashboard</a> to track payments.</p>
+          <p style="color:#333">Log into your <a href="https://dashboard.stripe.com" style="color:#188260">Stripe dashboard</a> to track payments.</p>
         </div>
       `
     };

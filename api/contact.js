@@ -49,7 +49,7 @@ export default async function handler(req, res) {
         subject: 'Thank you for contacting cuteenglishteacher.ai® 🎓',
         html: `
           <div style="font-family:Arial,sans-serif;max-width:560px;margin:0 auto;background:#f7faf9;padding:32px 24px;">
-            <div style="background:#1D9E75;border-radius:12px;padding:24px;text-align:center;margin-bottom:24px">
+            <div style="background:#188260;border-radius:12px;padding:24px;text-align:center;margin-bottom:24px">
               <div style="font-size:36px;margin-bottom:8px">🎓</div>
               <div style="color:#fff;font-size:22px;font-weight:800">cuteenglishteacher.ai®</div>
               <div style="color:rgba(255,255,255,0.8);font-size:14px">English Coaching · Powered by AI</div>
@@ -60,12 +60,12 @@ export default async function handler(req, res) {
               <p style="color:#333;font-size:15px">Thank you for reaching out to cuteenglishteacher LLC®. I've received your message and will get back to you within 24 hours.</p>
               <p style="color:#333;font-size:15px">In the meantime, feel free to explore the platform or book a session:</p>
               <div style="text-align:center;margin:24px 0">
-                <a href="https://cuteenglishteacher.ai/app.html" style="background:#1D9E75;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px">Explore the Platform →</a>
+                <a href="https://cuteenglishteacher.ai/app.html" style="background:#188260;color:#fff;padding:12px 28px;border-radius:8px;text-decoration:none;font-weight:700;font-size:15px">Explore the Platform →</a>
               </div>
             </div>
             <div style="text-align:center;font-size:12px;color:#888">
               cuteenglishteacher LLC® · Southport, NC<br>
-              <a href="https://cuteenglishteacher.ai/terms.html" style="color:#1D9E75">Terms & Conditions</a>
+              <a href="https://cuteenglishteacher.ai/terms.html" style="color:#188260">Terms & Conditions</a>
             </div>
           </div>
         `

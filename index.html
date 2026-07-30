@@ -9,30 +9,30 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background: #f5f5f5; color: #1a1a1a; min-height: 100vh; }
 
-  .site-header { background: #fff; border-bottom: 2px solid #1D9E75; padding: 14px 24px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 100; }
-  .logo-circle { width: 40px; height: 40px; border-radius: 50%; background: #1D9E75; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .site-header { background: #fff; border-bottom: 2px solid #188260; padding: 14px 24px; display: flex; align-items: center; gap: 12px; position: sticky; top: 0; z-index: 100; }
+  .logo-circle { width: 40px; height: 40px; border-radius: 50%; background: #188260; display: flex; align-items: center; justify-content: center; font-size: 20px; }
   .site-title { font-size: 20px; font-weight: 700; color: #0F6E56; }
   .site-tagline { font-size: 13px; color: #5F5E5A; margin-top: 1px; }
 
-  .tabs-nav { display: flex; background: #fff; border-bottom: 1px solid #e0e0e0; padding: 0 24px; gap: 4px; }
+  .tabs-nav { display: flex; background: #fff; border-bottom: 1px solid #949494; padding: 0 24px; gap: 4px; }
   .tab-btn { padding: 14px 20px; font-size: 14px; font-weight: 500; border: none; background: none; cursor: pointer; color: #6b6b6b; border-bottom: 3px solid transparent; margin-bottom: -1px; transition: color 0.2s; }
-  .tab-btn.active { color: #0F6E56; border-bottom-color: #1D9E75; }
-  .tab-btn:hover { color: #1D9E75; }
+  .tab-btn.active { color: #0F6E56; border-bottom-color: #188260; }
+  .tab-btn:hover { color: #188260; }
 
   .tab-panel { display: none; max-width: 720px; margin: 0 auto; padding: 28px 24px; }
   .tab-panel.active { display: block; }
-  .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; }
+  .card { background: #fff; border: 1px solid #949494; border-radius: 12px; padding: 20px 24px; margin-bottom: 16px; }
 
   .pkg-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 18px; }
-  .pkg { border: 1.5px solid #e0e0e0; border-radius: 10px; padding: 14px 12px; cursor: pointer; text-align: center; transition: all 0.2s; }
-  .pkg:hover { border-color: #1D9E75; }
-  .pkg.selected { border-color: #1D9E75; background: #E1F5EE; }
+  .pkg { border: 1.5px solid #949494; border-radius: 10px; padding: 14px 12px; cursor: pointer; text-align: center; transition: all 0.2s; }
+  .pkg:hover { border-color: #188260; }
+  .pkg.selected { border-color: #188260; background: #E1F5EE; }
   .pkg-name { font-size: 13px; color: #5F5E5A; margin-bottom: 4px; }
   .pkg-mins { font-size: 26px; font-weight: 700; color: #0F6E56; }
   .pkg-price { font-size: 13px; color: #5F5E5A; margin-top: 2px; }
 
   .pay-banner { border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; font-size: 14px; display: flex; align-items: center; gap: 10px; background: #fff8e1; border: 1.5px solid #BA7517; color: #633806; }
-  .pay-banner.paid { background: #E1F5EE; border-color: #1D9E75; color: #085041; }
+  .pay-banner.paid { background: #E1F5EE; border-color: #188260; color: #085041; }
 
   .pay-section { text-align: center; }
   .pay-btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; border-radius: 10px; border: none; background: #635BFF; color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; margin-bottom: 14px; transition: background 0.15s; }
@@ -44,19 +44,19 @@
   .timer-face { font-size: 64px; font-weight: 700; text-align: center; letter-spacing: 3px; color: #1a1a1a; margin: 8px 0; font-variant-numeric: tabular-nums; }
   .timer-label { text-align: center; font-size: 13px; color: #6b6b6b; margin-bottom: 12px; }
   .progress-wrap { height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin: 12px 0; }
-  .progress-bar { height: 100%; background: #1D9E75; border-radius: 4px; transition: width 1s linear, background 0.5s; }
+  .progress-bar { height: 100%; background: #188260; border-radius: 4px; transition: width 1s linear, background 0.5s; }
   .progress-bar.warn { background: #BA7517; }
   .progress-bar.danger { background: #E24B4A; }
 
   .seg-row { display: flex; gap: 5px; justify-content: center; margin: 10px 0 16px; flex-wrap: wrap; }
-  .seg { width: 24px; height: 8px; border-radius: 4px; background: #f0f0f0; border: 1px solid #e0e0e0; }
-  .seg.done { background: #1D9E75; border-color: #0F6E56; }
-  .seg.current { background: #5DCAA5; border-color: #1D9E75; }
+  .seg { width: 24px; height: 8px; border-radius: 4px; background: #f0f0f0; border: 1px solid #949494; }
+  .seg.done { background: #188260; border-color: #0F6E56; }
+  .seg.current { background: #146B4F; border-color: #188260; }
 
   .btn-row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
   .btn { padding: 10px 22px; border-radius: 8px; border: 1.5px solid #ccc; background: #fff; cursor: pointer; font-size: 14px; font-weight: 500; color: #1a1a1a; display: inline-flex; align-items: center; gap: 6px; transition: background 0.15s; }
   .btn:hover { background: #f5f5f5; }
-  .btn.primary { background: #1D9E75; border-color: #0F6E56; color: #fff; }
+  .btn.primary { background: #188260; border-color: #0F6E56; color: #fff; }
   .btn.primary:hover { background: #0F6E56; }
   .btn.danger { border-color: #E24B4A; color: #E24B4A; }
 
@@ -75,39 +75,39 @@
   .cal-month { font-size: 16px; font-weight: 600; }
   .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-bottom: 16px; }
   .cal-day-name { text-align: center; font-size: 12px; color: #6b6b6b; padding: 6px 0; font-weight: 500; }
-  .cal-day { text-align: center; padding: 8px 4px; font-size: 13px; border-radius: 8px; cursor: default; color: #bbb; }
+  .cal-day { text-align: center; padding: 8px 4px; font-size: 13px; border-radius: 8px; cursor: default; color: #767676; }
   .cal-day.avail { background: #E1F5EE; color: #0F6E56; font-weight: 600; cursor: pointer; }
-  .cal-day.avail:hover { background: #5DCAA5; color: #fff; }
-  .cal-day.selected { background: #1D9E75; color: #fff; font-weight: 700; }
-  .cal-day.today { border: 2px solid #1D9E75; color: #0F6E56; }
+  .cal-day.avail:hover { background: #146B4F; color: #fff; }
+  .cal-day.selected { background: #188260; color: #fff; font-weight: 700; }
+  .cal-day.today { border: 2px solid #188260; color: #0F6E56; }
   .cal-day.empty { visibility: hidden; }
 
   .slots-section { display: none; }
   .slots-section.show { display: block; }
   .slots-title { font-size: 14px; color: #555; margin-bottom: 10px; }
   .slots-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
-  .slot { text-align: center; padding: 10px; border-radius: 8px; border: 1.5px solid #e0e0e0; font-size: 13px; cursor: pointer; color: #555; transition: all 0.15s; }
-  .slot.open { border-color: #1D9E75; color: #0F6E56; background: #E1F5EE; }
-  .slot.open:hover { background: #1D9E75; color: #fff; }
-  .slot.picked { background: #1D9E75; color: #fff; border-color: #0F6E56; }
-  .confirm-banner { display: none; background: #E1F5EE; border: 1px solid #5DCAA5; border-radius: 8px; padding: 14px 18px; color: #085041; font-size: 14px; margin-top: 12px; align-items: center; gap: 10px; }
+  .slot { text-align: center; padding: 10px; border-radius: 8px; border: 1.5px solid #949494; font-size: 13px; cursor: pointer; color: #555; transition: all 0.15s; }
+  .slot.open { border-color: #188260; color: #0F6E56; background: #E1F5EE; }
+  .slot.open:hover { background: #188260; color: #fff; }
+  .slot.picked { background: #188260; color: #fff; border-color: #0F6E56; }
+  .confirm-banner { display: none; background: #E1F5EE; border: 1px solid #146B4F; border-radius: 8px; padding: 14px 18px; color: #085041; font-size: 14px; margin-top: 12px; align-items: center; gap: 10px; }
   .confirm-banner.show { display: flex; }
 
   .level-row, .focus-row { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-  .pill { padding: 6px 14px; border-radius: 99px; border: 1.5px solid #e0e0e0; background: #fff; font-size: 13px; cursor: pointer; color: #555; transition: all 0.15s; }
-  .pill.active { background: #1D9E75; border-color: #0F6E56; color: #fff; }
-  .focus-pill { padding: 5px 12px; border-radius: 8px; border: 1px solid #e0e0e0; background: #f8f8f8; font-size: 12px; cursor: pointer; color: #555; }
-  .focus-pill.active { border-color: #1D9E75; color: #0F6E56; background: #E1F5EE; }
+  .pill { padding: 6px 14px; border-radius: 99px; border: 1.5px solid #949494; background: #fff; font-size: 13px; cursor: pointer; color: #555; transition: all 0.15s; }
+  .pill.active { background: #188260; border-color: #0F6E56; color: #fff; }
+  .focus-pill { padding: 5px 12px; border-radius: 8px; border: 1px solid #949494; background: #f8f8f8; font-size: 12px; cursor: pointer; color: #555; }
+  .focus-pill.active { border-color: #188260; color: #0F6E56; background: #E1F5EE; }
 
   .chat-box { background: #f8f8f8; border: 1px solid #e8e8e8; border-radius: 12px; padding: 16px; min-height: 300px; max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 14px; margin-bottom: 14px; }
   .msg { display: flex; gap: 10px; align-items: flex-start; }
   .msg.user { flex-direction: row-reverse; }
   .av { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
-  .av.ai { background: #1D9E75; color: #fff; }
-  .av.user { background: #e0e0e0; color: #555; }
+  .av.ai { background: #188260; color: #fff; }
+  .av.user { background: #949494; color: #555; }
   .bubble { max-width: 78%; padding: 10px 14px; border-radius: 12px; font-size: 14px; line-height: 1.6; }
   .bubble.ai { background: #fff; border: 1px solid #e8e8e8; border-radius: 4px 12px 12px 12px; }
-  .bubble.user { background: #1D9E75; color: #fff; border-radius: 12px 4px 12px 12px; }
+  .bubble.user { background: #188260; color: #fff; border-radius: 12px 4px 12px 12px; }
   .phoneme { display: inline-block; background: #E1F5EE; color: #085041; border-radius: 4px; padding: 1px 6px; font-family: monospace; font-size: 12px; margin: 0 2px; }
   .score-pill-chat { display: inline-flex; align-items: center; gap: 4px; border-radius: 99px; padding: 3px 10px; font-size: 12px; font-weight: 600; margin-top: 6px; }
   .score-good { background: #EAF3DE; color: #27500A; }
@@ -115,34 +115,34 @@
   .score-low { background: #FAEEDA; color: #633806; }
 
   .quick-prompts { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-  .quick-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #e0e0e0; background: #fff; font-size: 12px; cursor: pointer; color: #555; }
-  .quick-btn:hover { border-color: #1D9E75; color: #0F6E56; }
+  .quick-btn { padding: 6px 12px; border-radius: 8px; border: 1px solid #949494; background: #fff; font-size: 12px; cursor: pointer; color: #555; }
+  .quick-btn:hover { border-color: #188260; color: #0F6E56; }
   .input-row { display: flex; gap: 8px; align-items: flex-end; }
-  .input-row textarea { flex: 1; resize: none; font-size: 14px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid #e0e0e0; min-height: 44px; max-height: 110px; line-height: 1.5; font-family: inherit; outline: none; }
-  .input-row textarea:focus { border-color: #1D9E75; }
-  .send-btn { width: 44px; height: 44px; border-radius: 8px; border: none; background: #1D9E75; cursor: pointer; font-size: 20px; color: #fff; flex-shrink: 0; }
+  .input-row textarea { flex: 1; resize: none; font-size: 14px; padding: 10px 14px; border-radius: 8px; border: 1.5px solid #949494; min-height: 44px; max-height: 110px; line-height: 1.5; font-family: inherit; outline: none; }
+  .input-row textarea:focus { border-color: #188260; }
+  .send-btn { width: 44px; height: 44px; border-radius: 8px; border: none; background: #188260; cursor: pointer; font-size: 20px; color: #fff; flex-shrink: 0; }
   .send-btn:hover { background: #0F6E56; }
   .send-btn:disabled { background: #ccc; cursor: not-allowed; }
   .coach-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
   .section-label { font-size: 12px; color: #6b6b6b; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
-  .auth-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 12px; padding: 28px 32px; margin-bottom: 16px; max-width: 420px; margin-left: auto; margin-right: auto; }
+  .auth-card { background: #fff; border: 1px solid #949494; border-radius: 12px; padding: 28px 32px; margin-bottom: 16px; max-width: 420px; margin-left: auto; margin-right: auto; }
   .auth-title { font-size: 22px; font-weight: 700; color: var(--teal-dark, #085041); margin-bottom: 6px; }
   .auth-sub { font-size: 14px; color: #6b6b6b; margin-bottom: 24px; }
-  .auth-input { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1.5px solid #e0e0e0; font-size: 14px; font-family: inherit; margin-bottom: 12px; outline: none; }
-  .auth-input:focus { border-color: #1D9E75; }
-  .auth-btn { width: 100%; padding: 13px; border-radius: 8px; border: none; background: #1D9E75; color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; margin-bottom: 10px; }
+  .auth-input { width: 100%; padding: 12px 14px; border-radius: 8px; border: 1.5px solid #949494; font-size: 14px; font-family: inherit; margin-bottom: 12px; outline: none; }
+  .auth-input:focus { border-color: #188260; }
+  .auth-btn { width: 100%; padding: 13px; border-radius: 8px; border: none; background: #188260; color: #fff; font-size: 15px; font-weight: 600; cursor: pointer; margin-bottom: 10px; }
   .auth-btn:hover { background: #0F6E56; }
-  .auth-btn.secondary { background: #fff; border: 1.5px solid #1D9E75; color: #0F6E56; }
+  .auth-btn.secondary { background: #fff; border: 1.5px solid #188260; color: #0F6E56; }
   .auth-btn.secondary:hover { background: #E1F5EE; }
   .auth-msg { font-size: 13px; text-align: center; padding: 10px; border-radius: 8px; margin-top: 8px; display: none; }
   .auth-msg.success { background: #E1F5EE; color: #085041; display: block; }
   .auth-msg.error { background: #FEE2E2; color: #991B1B; display: block; }
   .auth-toggle { font-size: 13px; text-align: center; color: #6b6b6b; margin-top: 12px; }
-  .auth-toggle a { color: #1D9E75; cursor: pointer; text-decoration: underline; }
-  .session-card { background: #E1F5EE; border: 1px solid #5DCAA5; border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+  .auth-toggle a { color: #188260; cursor: pointer; text-decoration: underline; }
+  .session-card { background: #E1F5EE; border: 1px solid #146B4F; border-radius: 10px; padding: 16px 20px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
   .session-info { font-size: 14px; color: #085041; }
   .session-date { font-size: 12px; color: #5F5E5A; margin-top: 3px; }
-  .user-banner { background: #1D9E75; color: #fff; padding: 12px 20px; border-radius: 10px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
+  .user-banner { background: #188260; color: #fff; padding: 12px 20px; border-radius: 10px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; font-size: 14px; }
   .signout-btn { background: rgba(255,255,255,0.2); border: none; color: #fff; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }
   footer { text-align: center; padding: 24px; font-size: 12px; color: #6b6b6b; border-top: 1px solid #e8e8e8; margin-top: 20px; }
   /* --- Accessibility additions --- */
@@ -353,7 +353,7 @@
       <button class="quick-btn" onclick="useQuick(this)">How do you pronounce "entrepreneur"?</button>
     </div>
     <div style="text-align:center;margin-bottom:12px">
-      <button id="mic-btn" onclick="toggleMic()" aria-label="Record your voice" aria-pressed="false" style="width:72px;height:72px;border-radius:50%;border:none;background:#1D9E75;cursor:pointer;font-size:32px;box-shadow:0 4px 12px rgba(29,158,117,0.4);transition:all 0.2s">🎤</button>
+      <button id="mic-btn" onclick="toggleMic()" aria-label="Record your voice" aria-pressed="false" style="width:72px;height:72px;border-radius:50%;border:none;background:#188260;cursor:pointer;font-size:32px;box-shadow:0 4px 12px rgba(29,158,117,0.4);transition:all 0.2s">🎤</button>
       <div id="mic-status" style="font-size:13px;color:#6b6b6b;margin-top:8px">Tap the mic and speak your sentence</div>
     </div>
     <div class="input-row">
@@ -402,30 +402,30 @@
 <!-- CONTACT SECTION -->
 <section style="background:#f7faf9;padding:72px 24px;" id="contact">
   <div style="max-width:600px;margin:0 auto">
-    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#1D9E75;margin-bottom:12px">Get in touch</div>
+    <div style="font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#188260;margin-bottom:12px">Get in touch</div>
     <h2 style="font-size:clamp(26px,4vw,38px);font-weight:800;color:#1a1a1a;margin-bottom:12px">Contact cuteenglishteacher LLC®</h2>
     <p style="font-size:17px;color:#5F5E5A;margin-bottom:36px">Corporate inquiries, TOEFL programs, visa holder coaching, or partnership opportunities — we'd love to hear from you.</p>
-    <div style="background:#fff;border:1px solid #e0e0e0;border-radius:16px;padding:32px">
+    <div style="background:#fff;border:1px solid #949494;border-radius:16px;padding:32px">
       <div style="display:flex;flex-direction:column;gap:16px">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
           <div>
             <label for="contact-name" style="font-size:13px;font-weight:600;color:#085041;display:block;margin-bottom:6px">Full Name <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
-            <input id="contact-name" type="text" aria-required="true" placeholder="Your name" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #e0e0e0;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#1D9E75'" onblur="this.style.borderColor='#e0e0e0'">
+            <input id="contact-name" type="text" aria-required="true" placeholder="Your name" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #949494;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#188260'" onblur="this.style.borderColor='#949494'">
           </div>
           <div>
             <label for="contact-email" style="font-size:13px;font-weight:600;color:#085041;display:block;margin-bottom:6px">Email Address <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
-            <input id="contact-email" type="email" aria-required="true" placeholder="your@email.com" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #e0e0e0;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#1D9E75'" onblur="this.style.borderColor='#e0e0e0'">
+            <input id="contact-email" type="email" aria-required="true" placeholder="your@email.com" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #949494;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#188260'" onblur="this.style.borderColor='#949494'">
           </div>
         </div>
         <div>
           <label for="contact-company" style="font-size:13px;font-weight:600;color:#085041;display:block;margin-bottom:6px">Company / Organization</label>
-          <input id="contact-company" type="text" placeholder="Your company name (optional)" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #e0e0e0;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#1D9E75'" onblur="this.style.borderColor='#e0e0e0'">
+          <input id="contact-company" type="text" placeholder="Your company name (optional)" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #949494;font-size:14px;font-family:inherit;outline:none;box-sizing:border-box" onfocus="this.style.borderColor='#188260'" onblur="this.style.borderColor='#949494'">
         </div>
         <div>
           <label for="contact-message" style="font-size:13px;font-weight:600;color:#085041;display:block;margin-bottom:6px">Message <span aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
-          <textarea id="contact-message" aria-required="true" placeholder="Tell us how we can help..." rows="4" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #e0e0e0;font-size:14px;font-family:inherit;outline:none;resize:vertical;box-sizing:border-box" onfocus="this.style.borderColor='#1D9E75'" onblur="this.style.borderColor='#e0e0e0'"></textarea>
+          <textarea id="contact-message" aria-required="true" placeholder="Tell us how we can help..." rows="4" style="width:100%;padding:12px 14px;border-radius:8px;border:1.5px solid #949494;font-size:14px;font-family:inherit;outline:none;resize:vertical;box-sizing:border-box" onfocus="this.style.borderColor='#188260'" onblur="this.style.borderColor='#949494'"></textarea>
         </div>
-        <button onclick="submitContact()" id="contact-btn" style="background:#1D9E75;color:#fff;padding:14px 32px;border-radius:10px;border:none;font-size:16px;font-weight:600;cursor:pointer;width:100%">Send Message 🎓</button>
+        <button onclick="submitContact()" id="contact-btn" style="background:#188260;color:#fff;padding:14px 32px;border-radius:10px;border:none;font-size:16px;font-weight:600;cursor:pointer;width:100%">Send Message 🎓</button>
         <div id="contact-result" role="status" aria-live="polite" style="display:none;padding:14px;border-radius:8px;font-size:14px;text-align:center"></div>
       </div>
     </div>
@@ -487,10 +487,10 @@ async function submitContact() {
 
 <footer>
   <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin-bottom:12px">
-    <a href="/" style="color:#5DCAA5;font-size:13px;text-decoration:none">🏠 Home</a>
-    <a href="/terms.html" style="color:#5DCAA5;font-size:13px;text-decoration:none">Terms & Conditions</a>
-    <a href="/privacy.html" style="color:#5DCAA5;font-size:13px;text-decoration:none">Privacy Policy</a>
-    <a href="/app.html" style="color:#5DCAA5;font-size:13px;text-decoration:none">Launch App</a>
+    <a href="/" style="color:#146B4F;font-size:13px;text-decoration:none">🏠 Home</a>
+    <a href="/terms.html" style="color:#146B4F;font-size:13px;text-decoration:none">Terms & Conditions</a>
+    <a href="/privacy.html" style="color:#146B4F;font-size:13px;text-decoration:none">Privacy Policy</a>
+    <a href="/app.html" style="color:#146B4F;font-size:13px;text-decoration:none">Launch App</a>
   </div>
   &copy; 2026 cuteenglishteacher LLC &nbsp;·&nbsp; cuteenglishteacher.ai &nbsp;·&nbsp; Southport, NC
 </footer>
@@ -927,7 +927,7 @@ function toggleMic() {
 
   recognition.onerror = (event) => {
     isListening = false;
-    document.getElementById('mic-btn').style.background = '#1D9E75';
+    document.getElementById('mic-btn').style.background = '#188260';
     document.getElementById('mic-btn').textContent = '🎤';
     document.getElementById('mic-btn').setAttribute('aria-pressed','false');
     document.getElementById('mic-status').textContent = 'Error: ' + event.error + ' — please try again';
@@ -936,7 +936,7 @@ function toggleMic() {
 
   recognition.onend = () => {
     isListening = false;
-    document.getElementById('mic-btn').style.background = '#1D9E75';
+    document.getElementById('mic-btn').style.background = '#188260';
     document.getElementById('mic-btn').textContent = '🎤';
     document.getElementById('mic-btn').setAttribute('aria-pressed','false');
     if (document.getElementById('mic-status').textContent === 'Listening... speak your sentence') {
